@@ -6,13 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
-
-const destinations = [
-  { id: "munnar", name: "Munnar" },
-  { id: "alappuzha", name: "Alappuzha" },
-  { id: "wayanad", name: "Wayanad" },
-  { id: "kochi", name: "Kochi" }
-];
+import { destinations } from '@/assets/destinations';
 
 const TripPlanner: React.FC = () => {
   const [destination, setDestination] = useState<string>('');

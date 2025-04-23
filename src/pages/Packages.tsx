@@ -108,7 +108,7 @@ const Packages = () => {
   useEffect(() => {
     let result = allPackages;
     
-    if (filters.destination) {
+    if (filters.destination && filters.destination !== 'all_destinations') {
       result = result.filter(pkg => pkg.destination === filters.destination);
     }
     
@@ -116,7 +116,7 @@ const Packages = () => {
       result = result.filter(pkg => pkg.price <= filters.budget);
     }
     
-    if (filters.duration) {
+    if (filters.duration && filters.duration !== 'any_duration') {
       switch (filters.duration) {
         case 'short':
           result = result.filter(pkg => pkg.duration.includes('2 Days') || pkg.duration.includes('3 Days'));
@@ -189,7 +189,7 @@ const Packages = () => {
                           <SelectValue placeholder="All Destinations" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="">All Destinations</SelectItem>
+                          <SelectItem value="all_destinations">All Destinations</SelectItem>
                           {destinations.map((dest) => (
                             <SelectItem key={dest.id} value={dest.id}>
                               {dest.name}
@@ -225,7 +225,7 @@ const Packages = () => {
                           <SelectValue placeholder="Any Duration" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="">Any Duration</SelectItem>
+                          <SelectItem value="any_duration">Any Duration</SelectItem>
                           <SelectItem value="short">Short (2-3 Days)</SelectItem>
                           <SelectItem value="medium">Medium (4 Days)</SelectItem>
                           <SelectItem value="long">Long (5+ Days)</SelectItem>
