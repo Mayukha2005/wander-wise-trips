@@ -21,7 +21,7 @@ export const destinations = [
   {
     id: "kochi",
     name: "Kochi",
-    image: "https://images.unsplash.com/photo-1469041797191-50ace28483c3",
+    image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67", // Updated to Kochi Harbour image
     description: "Visit Kochi (Cochin), a vibrant port city with colonial architecture, Chinese fishing nets, and a rich cultural heritage."
   }
 ];
